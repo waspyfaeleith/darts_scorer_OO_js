@@ -24,7 +24,7 @@ Game.prototype = {
 
   getPlayer: function(playerNum) {
     var name = readlineSync.question('Enter player ' + playerNum + ' name :',  { hideEchoBack: false });
-    console.log('Hi ' + name + '!');
+    console.log(name);
     return name;
   },
 
