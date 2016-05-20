@@ -3,8 +3,8 @@ var Throw = require('./throw');
 var Player = function(name, startScore) {
   this.name = name;
   this.currentScore = startScore;
-  this.scores = []
-}
+  this.scores = [];
+};
 
 Player.prototype = {
     throwDarts: function(playerThrow) {
@@ -15,8 +15,9 @@ Player.prototype = {
   },
 
   isBust: function(playerThrow) {
-    if ((playerThrow.score > this.currentScore) || ((this.currentScore - playerThrow.score) == 1) ) {
-      console.log("BUST!!");
+    if ((playerThrow.score > this.currentScore) || 
+          ((this.currentScore - playerThrow.score) == 1) ) {
+      console.log('BUST!!');
       return true;
     }
     return false;
@@ -26,7 +27,8 @@ Player.prototype = {
   
     var highFinishes  = [ 170, 167, 164, 161, 160 ];
         
-        if ( (highFinishes.indexOf(this.currentScore) > -1 ) || (this.currentScore < 159)) {
+        if ( (highFinishes.indexOf(this.currentScore) > -1 ) 
+          || (this.currentScore < 159)) {
             return true;
         } else {
           return false;
