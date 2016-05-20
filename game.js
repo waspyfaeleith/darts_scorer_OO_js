@@ -17,7 +17,7 @@ Game.prototype = {
   },
 
   getPlayer: function(playerNum) {
-    var name = readlineSync.question('Enter player ' + playerNum + ' name :',
+    var name = readlineSync.question('Enter player ' + playerNum + ' name : ',
                       { hideEchoBack: false });
     console.log(name);
     return name;
@@ -37,7 +37,7 @@ Game.prototype = {
 
   getScore: function() {
     var score = readlineSync.question(
-      '\n\nEnter ' + this.thrower.name + '\'s score :',
+      '\n\nEnter ' + this.thrower.name + '\'s score : ',
       { hideEchoBack: false });
     return score;
   },
@@ -71,6 +71,7 @@ Game.prototype = {
   },
 
   printScoreboard: function() {
+      console.log('\033c'); //clear the console
       console.log('\n\t\t' + this.startScore);
       console.log('\n\t' + this.player1.name + '\t | \t' + this.player2.name);
       console.log('----------------------------------');
